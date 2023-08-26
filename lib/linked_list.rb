@@ -20,6 +20,23 @@ class LinkedList
       end
     end
 
+    def prepend(data)
+      node = new_node(data)
+      node.next_node = head
+      self.head = node
+    end
+
+    def insert(location, data)
+      node = new_node(data)
+      prior_node = node_at(head, location - 1)
+      next_node = node_at(head, location)
+      prior_node.next_node = node
+      node.next_node = next_node
+      return node
+
+
+    end
+
     def empty?
       head.nil?
     end
@@ -36,6 +53,11 @@ class LinkedList
     def count_node(node, counter) 
       return counter if node.tail?
       count_node(node.next_node, counter += 1)
+    end
+
+    def node_at(node, location, counter = 0)
+      return node if location == counter
+      node_at(node.next_node, location, counter += 1)
     end
     
     def make_node_string(node, data)
