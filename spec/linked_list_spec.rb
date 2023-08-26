@@ -13,7 +13,7 @@ RSpec.describe LinkedList do
   describe '#append' do  
     it describe 'does the head equal nil?' do 
       list = LinkedList.new
-      
+
       expect(list.head).to eq(nil)
     end
     
@@ -21,8 +21,7 @@ RSpec.describe LinkedList do
       list = LinkedList.new
       list.append('doop')
 
-      expect(list.head.data).to eq('doop')
-      expect(list.append('doop')).to eq('doop') #added later in IT
+      expect(list.head.data).to eq('doop')     
     end
 
     it describe 'next node equals nil' do
@@ -45,17 +44,26 @@ RSpec.describe LinkedList do
       list = LinkedList.new
       list.append('doop')
       list.append('deep')
-    
+
+ 
+
       expect(list.head.next_node).to be_instance_of Node
     end
   end
 
   describe "#count" do
-    it "tells us how many things are in the list" do
+    it "tells us if one thing is in the list" do
       list = LinkedList.new
       list.append('doop')
       
       expect(list.count).to eq(1)
+    end
+    it "tells us if two things are in the list" do
+      list = LinkedList.new
+      list.append('doop')
+      list.append('deep')
+      
+      expect(list.count).to eq(2)
     end
   end
   
@@ -63,8 +71,26 @@ RSpec.describe LinkedList do
     it "generates a string of all the elements in the list, separated by spaces" do
       list = LinkedList.new
       list.append('doop')
+      list.append('deep')
 
-      expect(list.to_string).to eq("doop")      
+    
+      expect(list.to_string).to eq("doop deep")      
+
+    end
+
+
+    it "needs to make sure the string one works so I looked ahead" do
+      list = LinkedList.new
+      list.append('doop')
+      list.append('deep')
+      list.append('plop')
+      list.append('suu')
+      list.append('dop')
+      list.append('woo')
+
+    
+      expect(list.to_string).to eq("doop deep plop suu dop woo")      
+
     end
   end
 end
