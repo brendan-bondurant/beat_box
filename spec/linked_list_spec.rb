@@ -168,7 +168,7 @@ RSpec.describe LinkedList do
   end
 
   describe "includes?" do
-    xit "gives true or false if the supplied value is in the list" do
+    it "gives true or false if the supplied value is in the list" do
       list = LinkedList.new
       list.append("deep")
       list.append("woo")

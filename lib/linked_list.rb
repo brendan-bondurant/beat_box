@@ -65,9 +65,10 @@ class LinkedList
       make_node_string(node.next_node, concat_altered(data, node), terminal, counter += 1)
     end
 
-    def includes?(data)
-      return true if node.data == @data
-      return false if @next_node == nil
+    def includes?(data, node = head)
+      return false if node == nil
+      return true if node.data == data
+    includes?(data, node.next_node)
     end
 
     def find(start, count)
