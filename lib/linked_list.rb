@@ -10,7 +10,6 @@ class LinkedList
     end
 
     def append(data)
-
       if empty?
         self.head = new_node(data)
       else
@@ -60,10 +59,24 @@ class LinkedList
       return concat(data, node) if node.tail? || terminal == counter
       make_node_string(node.next_node, concat(data, node), terminal, counter += 1)
     end
+    
+    
+    
+    def make_node_string_altered(node, data, terminal = nil, counter = 1)
+      return concat_altered(data, node) if node.tail? || terminal == counter
+      make_node_string(node.next_node, concat_altered(data, node), terminal, counter += 1)
+    end
+
+
+
+
+
+
+
 
     def find(start, count)
       found_node = node_at(head, start)
-      make_node_string(found_node, @data, count)
+      make_node_string_altered(found_node, @data, count)
       end
 
     
@@ -71,6 +84,10 @@ class LinkedList
       "#{data} #{node.data}"
     end
     
+    def concat_altered(data, node)
+      "#{node.data}"
+    end
+
     def to_string
       return "" if empty?
       return "#{head.data}" if head.tail?

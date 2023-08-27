@@ -137,15 +137,33 @@ RSpec.describe LinkedList do
   end
   
   describe "find" do
-    it "1st parameter indicates 2nd positon to return and second specifies how many to return" do
+    it "1st parameter indicates 2nd positon to return and second specifies how many to return (only 1 return)" do
       list = LinkedList.new
       list.append("deep")
       list.append("woo")
       list.append("shi")
       list.append("shu")
       list.append("blop")
-      
+
       expect(list.to_string).to eq("deep woo shi shu blop")
+      expect(list.find(2, 1)).to eq("shi")
+
+    
+    end
+
+    
+      it "1st parameter indicates 2nd positon to return and second specifies how many to return (multiple return)" do
+      list = LinkedList.new
+      list.append("deep")
+      list.append("woo")
+      list.append("shi")
+      list.append("shu")
+      list.append("blop")
+
+
+      expect(list.find(1, 2)).to eq("woo shi")
+
+      expect(list.find(1, 3)).to eq("woo shi shu")
     end
   end
 end
