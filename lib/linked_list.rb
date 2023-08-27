@@ -66,7 +66,9 @@ class LinkedList
     end
 
     def includes?(data)
-
+      return true if node.data == @data
+      return false if @next_node == nil
+    end
 
     def find(start, count)
       found_node = node_at(head, start)
