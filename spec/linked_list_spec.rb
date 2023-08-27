@@ -134,6 +134,18 @@ RSpec.describe LinkedList do
 
       expect(list.to_string).to eq("dop woo plop suu")
     end
-
+  end
+  
+  describe "find" do
+    it "1st parameter indicates 2nd positon to return and second specifies how many to return" do
+      list = LinkedList.new
+      list.append("deep")
+      list.append("woo")
+      list.append("shi")
+      list.append("shu")
+      list.append("blop")
+      
+      expect(list.to_string).to eq("deep woo shi shu blop")
+    end
   end
 end

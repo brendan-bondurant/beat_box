@@ -13,7 +13,7 @@ class LinkedList
 
     def append(data)
       node = Node.new(data)
-      if @head == nil
+      if @head.nil?
         self.head = node
       else
         last_node(head).next_node = node
@@ -33,8 +33,6 @@ class LinkedList
       prior_node.next_node = node
       node.next_node = next_node
       return node
-
-
     end
 
     def empty?
@@ -74,8 +72,5 @@ class LinkedList
       return "#{head.data}" if head.tail?
       make_node_string(head.next_node, "#{head.data}")
     end
-
-
-
-
+  
 end
