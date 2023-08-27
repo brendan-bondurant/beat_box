@@ -152,7 +152,7 @@ RSpec.describe LinkedList do
     end
 
     
-      it "1st parameter indicates 2nd positon to return and second specifies how many to return (multiple return)" do
+    it "1st parameter indicates 2nd positon to return and second specifies how many to return (multiple return)" do
       list = LinkedList.new
       list.append("deep")
       list.append("woo")
@@ -164,6 +164,36 @@ RSpec.describe LinkedList do
       expect(list.find(1, 2)).to eq("woo shi")
 
       expect(list.find(1, 3)).to eq("woo shi shu")
+    end
+  end
+
+  describe "includes?" do
+    xit "gives true or false if the supplied value is in the list" do
+      list = LinkedList.new
+      list.append("deep")
+      list.append("woo")
+      list.append("shi")
+      list.append("shu")
+      list.append("blop")
+# require 'pry'; binding.pry
+      expect(list.includes?("deep")).to be true
+      expect(list.includes?("dep")).to be false
+    end
+  end
+
+  describe "pop" do
+    it "removes last element and returns it" do
+      list = LinkedList.new
+      list.append("deep")
+      list.append("woo")
+      list.append("shi")
+      list.append("shu")
+      list.append("blop")
+
+
+      expect(list.pop). to eq("blop")
+      expect(list.pop). to eq("shu")
+      expect(list.to_string).to eq("deep woo shi")
     end
   end
 end

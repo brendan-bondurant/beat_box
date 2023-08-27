@@ -60,24 +60,18 @@ class LinkedList
       make_node_string(node.next_node, concat(data, node), terminal, counter += 1)
     end
     
-    
-    
     def make_node_string_altered(node, data, terminal = nil, counter = 1)
       return concat_altered(data, node) if node.tail? || terminal == counter
       make_node_string(node.next_node, concat_altered(data, node), terminal, counter += 1)
     end
 
-
-
-
-
-
+    def includes?(data)
 
 
     def find(start, count)
       found_node = node_at(head, start)
       make_node_string_altered(found_node, @data, count)
-      end
+    end
 
     
     def concat(data, node)
@@ -93,5 +87,12 @@ class LinkedList
       return "#{head.data}" if head.tail?
       make_node_string(head.next_node, "#{head.data}")
     end
-  
-end
+
+    def pop
+      new_tail = node_at(head, count - 2)
+      old_tail = new_tail.next_node
+      new_tail.next_node = nil
+      return old_tail.data
+
+    end
+  end
