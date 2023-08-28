@@ -30,10 +30,23 @@ RSpec.describe BeatBox.new
     bb = BeatBox.new
     list = LinkedList.new
     bb.append("deep doo ditt")
+    bb.append("woo hoo shu")
 
     expect(bb.list.head.data).to eq("deep")
     expect(bb.list.head.next_node.data).to eq("doo")
+    expect(bb.count).to eq 6
     end
+  end
+
+  describe "#count" do
+    it describe "can I count what has been added to it" do
     
-     
+    bb = BeatBox.new
+    list = LinkedList.new
+    bb.append("deep doo ditt")
+    bb.append("woo hoo shu")
+
+
+    expect(bb.count).to eq 6
+    end
   end
