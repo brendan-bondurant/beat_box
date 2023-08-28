@@ -34,7 +34,6 @@ RSpec.describe BeatBox.new
 
     expect(bb.list.head.data).to eq("deep")
     expect(bb.list.head.next_node.data).to eq("doo")
-    expect(bb.count).to eq 6
     end
   end
 
@@ -45,8 +44,9 @@ RSpec.describe BeatBox.new
     list = LinkedList.new
     bb.append("deep doo ditt")
     bb.append("woo hoo shu")
+# require 'pry'; binding.pry
 
-
+  
     expect(bb.count).to eq 6
     end
   end
