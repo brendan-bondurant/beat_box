@@ -49,4 +49,15 @@ RSpec.describe BeatBox.new
   
     expect(bb.count).to eq 6
     end
+    
+    it describe "make it play" do
+      bb = BeatBox.new
+      list = LinkedList.new
+      bb.append("deep doo ditt woo hoo shu")
+      
+      
+      expect(bb.count).to eq 6
+    end
+
+
   end
