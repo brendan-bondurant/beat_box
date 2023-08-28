@@ -29,13 +29,11 @@ RSpec.describe BeatBox.new
     it describe "can I append something to it?" do
     bb = BeatBox.new
     list = LinkedList.new
-    # bb = list
-
-    
     bb.append("deep doo ditt")
-  
 
     expect(bb.list.head.data).to eq("deep")
+    expect(bb.list.head.next_node.data).to eq("doo")
     end
     
+     
   end
