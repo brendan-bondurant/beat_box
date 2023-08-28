@@ -2,6 +2,7 @@ class LinkedList
   attr_accessor :head
     def initialize
       @head = nil  
+
     end
 
     def last_node(node)
@@ -10,12 +11,36 @@ class LinkedList
     end
 
     def append(data)
-      if empty?
+      multiple_nodes = data.split
+      list = LinkedList.new
+      if multiple_nodes.count > 1
+        multiple_nodes.each do |single_node|
+        list.add_node(single_node)
+        # @list << list.add_node(single_node)
+        end
+        list
+      elsif empty?
         self.head = new_node(data)
       else
         last_node(head).next_node = new_node(data)
       end
     end
+
+    def add_node(data)
+      new_node = Node.new(data)
+      if @head.nil?
+        @head = new_node
+      else 
+        current = @head
+        while current.next_node
+          current = current.next_node
+        end
+        current.next_node = new_node
+      end
+    end
+    
+
+
 
     def prepend(data)
       node = new_node(data)
