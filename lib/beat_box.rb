@@ -7,8 +7,8 @@ class BeatBox
     
   def append(data)
     multiple_nodes = data.split
-      multiple_nodes.each do |single_node|
-      list.add_node(single_node)
+    multiple_nodes.each do |single_node|
+    list.add_node(single_node)
     end
       list
     end
@@ -17,13 +17,11 @@ class BeatBox
     return 0 if list.head == nil
     current_node = list.head
     count = 0
-
     while current_node
       count += 1
       current_node = current_node.next_node
     end
     count
-  
   end
 
   def count_node(node, counter) 
@@ -32,7 +30,7 @@ class BeatBox
   end
 
   def play
-    puts `say -r 100 -v Samantha #{beats}`
+    puts `say -r 250 -v Samantha #{beats}`
   end
 
   def beats
@@ -42,9 +40,5 @@ class BeatBox
       noise += " " + current_node.data.to_s
     end
     noise
-    
-
   end
-
-
 end

@@ -13,8 +13,7 @@ RSpec.describe BeatBox.new
     it describe "does it contain a list?" do
       bb = BeatBox.new
       list = LinkedList.new
-
-
+      
       expect(bb.list).to be_instance_of(LinkedList) 
     end
 
@@ -22,39 +21,34 @@ RSpec.describe BeatBox.new
       bb = BeatBox.new
       list = LinkedList.new
       
-      expect(bb.list.head).to eq(nil)
-      
+      expect(bb.list.head).to eq(nil)  
     end
     
     it describe "can I append something to it?" do
-    bb = BeatBox.new
-    list = LinkedList.new
-    bb.append("deep doo ditt")
-    bb.append("woo hoo shu")
+      bb = BeatBox.new
+      list = LinkedList.new
+      bb.append("deep doo ditt")
+      bb.append("woo hoo shu")
 
-    expect(bb.list.head.data).to eq("deep")
-    expect(bb.list.head.next_node.data).to eq("doo")
+      expect(bb.list.head.data).to eq("deep")
+      expect(bb.list.head.next_node.data).to eq("doo")
     end
   end
 
   describe "#count" do
     it describe "can I count what has been added to it" do
-    
-    bb = BeatBox.new
-    list = LinkedList.new
-    bb.append("deep doo ditt")
-    bb.append("woo hoo shu")
-# require 'pry'; binding.pry
+      bb = BeatBox.new
+      list = LinkedList.new
+      bb.append("deep doo ditt")
+      bb.append("woo hoo shu")
 
-  
-    expect(bb.count).to eq 6
+      expect(bb.count).to eq 6
     end
     
     it describe "make it play" do
       bb = BeatBox.new
       list = LinkedList.new
       bb.append("deep doo ditt woo hoo shu")
-      
 
       expect(bb.count).to eq 6
       expect(bb.play)
@@ -63,7 +57,8 @@ RSpec.describe BeatBox.new
     it describe "konakol" do
       bb = BeatBox.new
       list = LinkedList.new
-      bb.append("ta ki ta ta ki ta ta ka ta ka")
+      
+      bb.append("tam ta ka ta ka ta ri ki ta ta ka tam ta ka ta ka ta ri ki ta ta ka ta ri ki ta ta ka")
       expect(bb.play)
     end
 
