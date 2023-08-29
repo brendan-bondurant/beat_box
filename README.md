@@ -14,6 +14,18 @@ Pseudocode notes for BeatBox
 
 1. Create a method that returns that data as a string. Don't make this over complicated.
 
-1. The append method is going to need to be updated so the data is put into a new node if the list is not currently emptied. It is a good idea to make a separate method that will check if the head is nil to make everything a little cleaner. If the head is empty, the data goes there. If it isn't, then a new node is created and added onto the tail. Consider making a method to identify whether or not it is the last node. 
+1. The append method is going to need to be updated so the data is put into a new node if the list is not currently emptied. It is a good idea to make a separate method that will check if the head is nil to make everything a little cleaner. If the head is empty, the data goes there. If it isn't, then a new node is created and added onto the tail. Consider making a method in the Node class to identify whether or not it is the last node and isn't pointed anywhere. Tail is probably easier to keep track of than end. 
 
 1. Test to make sure that the count method works if more than one piece of data is appended. 
+
+1. The next step will be making sure that multiple nodes can be created and counted. In the test, append multiple different strings for sound. Making a method in the LinkedList class to answer if the node is the last one will be helpful later. 
+
+1. It will be important to run a pry to ensure that the list now contains multiple nodes. 
+
+1. Using the count method, test that there are multiple nodes. Run pry and confirm that the data is being added in the correct order and everything is working the way it is supposed to. 
+
+1. Now a method to find something needs to be created. It should be designed so that it is told where to look, and how many of the elements(sounds) should be returned. 
+
+1. After the find method is created, a method to figure out whether or not something is part of the list should be created. This will return true or false. 
+
+1. The last method to alter the list will be designed to pull the last element(sound) from the list and return just that. It will need to search through the list for the last element, and send that back. 
