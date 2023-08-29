@@ -27,7 +27,24 @@ class BeatBox
   end
 
   def count_node(node, counter) 
-    return counter if @next_node = nil
+    return counter if @next_node == nil
     count_node(@next_node, counter += 1)
   end
+
+  def play
+    puts `say -r 100 -v Samantha #{beats}`
+  end
+
+  def beats
+    current_node = list.head
+    noise = current_node.data.to_s
+    while (current_node = current_node.next_node)
+      noise += " " + current_node.data.to_s
+    end
+    noise
+    
+
+  end
+
+
 end
