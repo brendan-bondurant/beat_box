@@ -29,3 +29,9 @@ Pseudocode notes for BeatBox
 1. After the find method is created, a method to figure out whether or not something is part of the list should be created. This will return true or false. 
 
 1. The last method to alter the list will be designed to pull the last element(sound) from the list and return just that. It will need to search through the list for the last element, and send that back. 
+
+1. A new class needs to be created to insert the list. Call this BeatBox. It should contain the linked list and will be used to play the elements (sounds)
+
+1. Write various tests to confirm that the list is correct, testing for the head, tail, etc. 
+
+1. Finally, create a method to make the computer speak the beat back to you. Change the speed to something low enough to be understood, and the voice to be clear enough that you can confirm it is saying the correct things. 
